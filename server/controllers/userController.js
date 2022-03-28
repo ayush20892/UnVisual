@@ -110,7 +110,7 @@ exports.forgotPassword = BigPromise(async (req, res) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const message = `<div>Copy and paste this Code ||<b> ${forgotCode} </b>|| to verify.</div>`;
+  const message = `<div>Copy and paste this Code <b>${forgotCode}</b> to verify.</div>`;
 
   try {
     await mailHelper({
@@ -160,8 +160,8 @@ exports.verifyForgotCode = BigPromise(async (req, res) => {
   const cookieOptions = {
     expires: new Date(Date.now() + process.env.COOKIE_EXPIRY * 60 * 60 * 1000),
     httpOnly: true,
-    // sameSite: "none",
-    // secure: true,
+    sameSite: "none",
+    secure: true,
   };
 
   res.status(200).cookie("userVerify", encrypToken, cookieOptions).json({
