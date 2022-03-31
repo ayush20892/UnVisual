@@ -1,5 +1,5 @@
 const User = require("../models/userModel");
-const Product = require("../models/videoModel");
+const Video = require("../models/videoModel");
 const BigPromise = require("../middlewares/bigPromise");
 const cookieToken = require("../utils/cookieToken");
 const customError = require("../utils/customError");
@@ -294,6 +294,12 @@ exports.addToLikedVideos = BigPromise(async (req, res) => {
 
   await user.save();
 
+  const video = await Video.findById(req.body.videoId);
+
+  video.likes = video.likes + 1;
+
+  await video.save();
+
   res.status(200).json({
     success: true,
     user,
@@ -308,6 +314,12 @@ exports.deleteFromLikedVideos = BigPromise(async (req, res) => {
   );
 
   await user.updateOne({ likedVideos: newLikedVideos });
+
+  const video = await Video.findById(req.body.videoId);
+
+  video.likes = video.likes - 1;
+
+  await video.save();
 
   res.status(200).json({
     success: true,
