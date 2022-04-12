@@ -38,6 +38,7 @@ const videoSchema = mongoose.Schema({
     enum: {
       values: [
         "All",
+        "Comedy",
         "Javascript",
         "ComputerScience",
         "Music",
