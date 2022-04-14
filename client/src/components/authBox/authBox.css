@@ -1,0 +1,199 @@
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 25rem;
+  /* height: 20rem; */
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+}
+
+.login-box > img {
+  width: 40%;
+  align-self: center;
+  display: none;
+}
+
+.login-box > .login-form {
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form > h3 {
+  margin: 1rem 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.login-box > .login-form input {
+  width: 90%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--text-primary);
+  border-radius: 0.3rem;
+  margin: 0.8rem 0;
+  background-color: var(--search-box-bg);
+  color: var(--text-primary);
+}
+
+.login-box > .login-form > input::placeholder {
+  font-size: 1rem;
+}
+
+.login-box > .login-form > .password-input {
+  width: 90%;
+  position: relative;
+}
+
+.login-box > .login-form > .password-input > input {
+  width: 100%;
+}
+
+.login-box > .login-form > .password-input > .show-password {
+  font-size: 20px;
+  position: absolute;
+  bottom: 18px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.login-box > .login-form > .forgotPass-btn {
+  width: 90%;
+  float: left;
+  font-size: 14px;
+}
+
+.login-box > .login-form > .forgotPass-btn > a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.login-box > .login-form > button {
+  width: 90%;
+  margin: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  color: var(--text-primary);
+  /* border-radius: 0.3rem; */
+  font-weight: 300;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.login-box > .login-form > h4 {
+  color: red;
+  align-self: left;
+  margin: 1.5rem 1rem;
+}
+
+.login-box > .login-form > h5 {
+  margin: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.login-box > .login-form > h5 > span {
+  color: var(--primary-color);
+  font-weight: 550;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 0.4rem;
+  cursor: pointer;
+}
+
+.login-box > .login-form > h6 {
+  width: 80%;
+  align-self: left;
+  margin: 0;
+}
+
+.login-box > .login-form > .guest-login-btn {
+  background-color: var(--bg-solid-light);
+  border: 0.5px solid var(--border-color-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .login-main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-box {
+    border: 1px solid var(--border-color-primary);
+    /* border-radius: 1rem; */
+    /* box-shadow: 10px 10px 8px 8px #888888; */
+    width: 25rem;
+    /* height: 27.5rem; */
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-box > img {
+    width: 20%;
+    margin-top: 20px;
+    align-self: center;
+    display: inline;
+  }
+
+  .login-box > .login-form {
+    padding: 2% 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-form > h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-weight: 550;
+    font-size: 1.5rem;
+  }
+
+  .login-box > .login-form > input {
+    width: 90%;
+    padding: 0.6rem 1rem;
+    margin: 0.6rem 0;
+    background-color: var(--search-box-bg);
+    border: 0.5px solid var(--text-primary);
+    border-radius: 0.3rem;
+  }
+
+  .login-box > .login-form > button {
+    width: 90%;
+    margin: 0.8rem;
+    margin-top: 1rem;
+    padding: 0.55rem;
+    /* border-radius: 0.2rem; */
+    color: var(--text-primary);
+    font-weight: 400;
+    cursor: pointer;
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+  }
+
+  .login-box > .login-form > h5 {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .login-box > .login-form > h5 > span {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+}

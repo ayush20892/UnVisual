@@ -1,0 +1,84 @@
+.user-container {
+  display: flex;
+  justify-content: center;
+}
+
+.user-box {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.user-box > h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.user-box > h4 {
+  margin: 10px 0;
+}
+
+.user-box > h4 > span {
+  float: right;
+  margin-left: 20px;
+  font-size: 15px;
+  padding: 5px;
+  color: var(--text-secondary);
+}
+
+.user-box > .update-pwd-btn {
+  margin: 10px 0;
+}
+
+.user-box > .update-pwd-btn > button > a {
+  cursor: pointer;
+  padding: 10px;
+  background-color: none;
+  font-weight: 500;
+}
+
+.user-box > .btn {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.user-box > .btn > button {
+  background-color: var(--brand-color);
+  color: var(--text-primary);
+  font-weight: 400;
+  font-size: 18px;
+  padding: 7px 70px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border-color: var(--brand-color);
+}
+
+.user-box > .user-video-pages > a {
+  display: flex;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.user-box > .user-video-pages > a > .sidebar-icon {
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .user-box {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--border-color-primary);
+    border-radius: 0.5rem;
+    padding: 20px 80px;
+  }
+
+  .user-box > h4 > span {
+    float: right;
+    margin-left: 40px;
+    font-size: 15px;
+  }
+}
