@@ -1,10 +1,11 @@
 const BigPromise = require("../middlewares/bigPromise");
 const Video = require("../models/videoModel");
 const WhereClause = require("../utils/whereClause");
+const shuffleArray = require("../utils/shuffleVideos");
 const { extend } = require("lodash");
 
 exports.getAllVideos = BigPromise(async (req, res) => {
-  const videos = new WhereClause(
+  const videosWithClause = new WhereClause(
     Video.find().populate("comments.user"),
     req.query
   )
@@ -12,7 +13,8 @@ exports.getAllVideos = BigPromise(async (req, res) => {
     .filter()
     .pager();
 
-  const videoResult = await videos.base;
+  const videos = await videosWithClause.base;
+  const videoResult = shuffleArray(videos);
 
   res.status(200).json({
     success: true,
