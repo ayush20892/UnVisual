@@ -1,0 +1,83 @@
+.modal-page {
+  position: fixed;
+  top: 0px;
+  opacity: 1;
+  z-index: var(--z-index-3);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--badge-bg);
+}
+
+.modal-box {
+  width: 300px;
+  height: max-content;
+  padding: 10px 20px;
+  background-color: var(--bg-solid);
+  cursor: default;
+}
+
+.modal-box > .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  padding: 8px 0;
+}
+
+.modal-box > .header > span {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.modal-box > .playlist-list {
+}
+
+.modal-box > .playlist-list > .playlist-checkbox {
+  margin: 5px 0;
+}
+
+.modal-box > .playlist-list > .playlist-checkbox > input {
+  height: 18px;
+  width: 18px;
+}
+
+.modal-box > .playlist-list > .playlist-checkbox > span {
+  margin-left: 10px;
+  font-size: 16px;
+  position: relative;
+  bottom: 2px;
+}
+
+.modal-box > .new-playlist {
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.modal-box > .new-playlist > span {
+  position: relative;
+  top: 4.5px;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.modal-box > .new-playlist-input {
+  margin: 10px 0;
+}
+
+.modal-box > .new-playlist-input > input {
+  height: 24px;
+  padding: 2px 5px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: var(--badge-bg);
+}
+
+.modal-box > .new-playlist-input > button {
+  background-color: var(--bg-solid);
+  color: #3ea5ff;
+}
