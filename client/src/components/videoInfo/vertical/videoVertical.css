@@ -1,0 +1,97 @@
+.video-box-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 5px;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+.video-box-vertical > .img-box {
+  width: min(100%, 360px);
+  position: relative;
+  cursor: pointer;
+}
+
+.video-box-vertical > .img-box > img {
+  width: 100%;
+  max-height: 202px;
+  object-fit: cover;
+}
+
+.video-box-vertical > .img-box > span {
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.5rem;
+  font-size: 11px;
+  padding: 0.1rem 0.1rem;
+  color: var(--text-primary);
+  background-color: black;
+}
+
+.video-box-vertical > .video-details {
+  width: 100%;
+  display: flex;
+}
+
+.video-box-vertical > .video-details > .video-info {
+  width: 93%;
+}
+
+.video-box-vertical > .video-details > .video-info > h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.video-box-vertical > .video-details > .video-info > p {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+  .video-box-vertical {
+    width: 33.33%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-box-vertical {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .video-box-vertical > .img-box {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .video-box-vertical > .img-box > img {
+    max-height: none;
+    height: 250px;
+  }
+
+  .video-box-vertical > .img-box > span {
+    font-size: 13px;
+  }
+
+  .video-box-vertical > .video-details {
+    padding: 0 10px;
+  }
+
+  .video-box-vertical > .video-details > .video-info > h4 {
+    font-size: 18px;
+  }
+
+  .video-box-vertical > .video-details > .video-info > p {
+    font-size: 14px;
+  }
+}
