@@ -1,0 +1,106 @@
+header {
+  height: 70px;
+  width: 100%;
+  background-color: var(--bg-solid);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: var(--z-index-2);
+}
+
+header > .brand {
+  display: flex;
+  width: 18%;
+  cursor: pointer;
+}
+
+header > .brand > img {
+  width: var(--icon-width);
+  height: var(--icon-height);
+  margin: 8px 10px;
+}
+
+header > .brand > .brand-name {
+  margin: 27px 14px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+header > .search-box {
+  display: flex;
+  margin: 15px;
+  width: 40%;
+}
+
+header > .search-box > .search-input {
+  width: 100%;
+  position: relative;
+}
+
+header > .search-box > .search-input > input {
+  background-color: var(--search-box-bg);
+  color: var(--text-primary);
+  padding: 13px 15px;
+  width: 100%;
+  border: 1px solid var(--border-color-primary);
+  border-right: none;
+}
+
+header > .search-box > .search-input > .search-cross {
+  font-size: 24px;
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+  cursor: pointer;
+}
+
+header > .search-box > button {
+  background-color: var(--search-button-bg);
+  padding: 0 15px;
+  border: 1px solid var(--border-color-primary);
+  border-left: none;
+}
+
+header > .user-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+header > .user-profile > h4 {
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+header > .user-profile > .user-icon {
+  font-size: 40px;
+  fill: var(--text-primary);
+  margin: 0 20px;
+}
+
+header > .user-icon:hover {
+  fill: var(--search-button-bg);
+}
+
+@media screen and (max-width: 768px) {
+  header > .brand > div > .back-arrow {
+    font-size: 50px;
+    padding: 0 10px;
+  }
+
+  header > .brand > .brand-name {
+    display: none;
+  }
+
+  header > .search-box {
+    width: 82%;
+  }
+
+  header > .user-profile {
+    display: none;
+  }
+}
