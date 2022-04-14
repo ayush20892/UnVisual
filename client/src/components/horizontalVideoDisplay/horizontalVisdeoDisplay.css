@@ -1,0 +1,37 @@
+.horizontal-display {
+  padding: 10px 20px;
+}
+
+.horizontal-display > .page-info {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.horizontal-display > .page-info > h4 {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.horizontal-display > .page-info > p {
+  font-size: 20px;
+  padding-left: 10px;
+  color: var(--text-secondary);
+}
+
+.horizontal-display > h3 {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 40px;
+}
+
+.horizontal-display > .horizontal-video-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .horizontal-display {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,96 @@
+.video-box {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  width: 1000px;
+}
+
+.video-box > .img-box {
+  width: 360px;
+  position: relative;
+  cursor: pointer;
+}
+
+.video-box > .img-box > img {
+  width: 100%;
+  max-height: 202px;
+  object-fit: cover;
+}
+
+.video-box > .img-box > span {
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.1rem;
+  color: var(--text-primary);
+  background-color: black;
+}
+
+.video-box > .video-details {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.video-box > .video-details > h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.video-box > .video-details > p {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.video-box > .three-dots {
+  fill: var(--text-primary);
+  font-size: 1.5rem;
+  position: relative;
+  top: 10px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+  .video-box {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-box {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .video-box > .img-box {
+    width: min(35%, 360px);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .video-box > .img-box > img {
+    max-height: none;
+  }
+
+  .video-box > .video-details {
+    width: 50%;
+  }
+
+  .video-box > .video-details > h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .video-box > .video-details > p {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
