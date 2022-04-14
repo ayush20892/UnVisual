@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 // Middlewares
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://unvisual.netlify.app/"],
     credentials: true,
   })
 );
