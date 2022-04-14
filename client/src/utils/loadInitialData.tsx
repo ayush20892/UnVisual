@@ -21,7 +21,6 @@ export default async function loadInitialData({
     localStorage.getItem("session")!
   );
   const data = await getAllVideos();
-  console.log(data);
   if (data.success)
     videoDispatch({ type: "LOAD_VIDEOS", payload: data.videoResult });
   else toast("Cannot connect to server.");
