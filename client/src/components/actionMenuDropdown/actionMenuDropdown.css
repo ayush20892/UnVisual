@@ -1,0 +1,38 @@
+.dropdown-action {
+  position: relative;
+}
+
+.dropdown-action > .three-dots {
+  /* width: 7%; */
+  fill: var(--text-primary);
+  font-size: 20px;
+  position: relative;
+  top: 10px;
+  cursor: pointer;
+}
+
+.dropdown-action > .dropdown-list {
+  background-color: var(--bg-solid);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  /* padding: 10px 0; */
+}
+
+.dropdown-action > .dropdown-list > .dropdown-option {
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-color-primary);
+  cursor: pointer;
+}
+
+.dropdown-action > .dropdown-list > .dropdown-option:hover {
+  background-color: var(--badge-bg-hover);
+}
+
+.dropdown-action > .dropdown-list > .dropdown-option > span {
+  position: relative;
+  top: 2px;
+  margin: 0 10px;
+  padding: 0;
+}
