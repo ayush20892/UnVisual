@@ -1,0 +1,31 @@
+main {
+  height: 100%;
+  display: flex;
+  padding-top: 70px;
+}
+
+main > .main-content {
+  width: 100%;
+  /* padding: 16px 24px; */
+  padding-left: calc(min(20%, var(--sidebar-width-desktop)));
+}
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+  main > .main-content {
+    width: 100%;
+    /* padding: 16px 0px; */
+    padding-left: calc(var(--sidebar-width-tab));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-bottom: 60px;
+  }
+
+  main > .main-content {
+    width: 100%;
+    padding: 0px 0px;
+    padding-bottom: 16px;
+  }
+}
