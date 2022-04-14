@@ -1,0 +1,22 @@
+.playlist-display > .page-info {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 20px;
+}
+
+.playlist-display > .page-info > h4 {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.playlist-display > .page-info > p {
+  font-size: 20px;
+  padding-left: 10px;
+  color: var(--text-secondary);
+}
+
+.playlist-display > .playlist {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
