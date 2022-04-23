@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { UpdateUserBox } from "../components/updateBox/updateUserBox";
 import { UpdateUserPasswordBox } from "../components/updateBox/updatePasswordBox";
 
-export function UpdateUser() {
+export default function UpdateUser() {
   const { updateType } = useParams();
   return (
     <>

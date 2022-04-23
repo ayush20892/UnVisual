@@ -6,6 +6,8 @@ import Home from "./pageContent/Home";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Sidebar from "./components/sidebar/sidebar";
+import Loader from "./components/loader/loader";
+import AddToPlaylistModal from "./components/addToPlaylistModal/addToPlaylistModal";
 import History from "./pageContent/history";
 import LikedVideos from "./pageContent/likedVideos";
 import WatchLater from "./pageContent/watchLater";
@@ -13,15 +15,13 @@ import Playlist from "./pageContent/playlist";
 import PlaylistSingle from "./pageContent/playlistSingle";
 import User from "./pageContent/user";
 import VideoPage from "./pageContent/videoPage";
-import { PrivateRoute } from "./utils/privateRoute";
-import { UpdateUser } from "./pageContent/userUpdate";
-import { Loader } from "./components/loader/loader";
+import UpdateUser from "./pageContent/userUpdate";
+import PrivateRoute from "./utils/privateRoute";
 import loadInitialData from "./utils/loadInitialData";
+import { utilHeader } from "./utils/userUtils";
 import { useAuth } from "./context/authContext";
 import { useVideo } from "./context/videoContext";
-import AddToPlaylistModal from "./components/addToPlaylistModal/addToPlaylistModal";
 import { useMediaQuery } from "react-responsive";
-import { utilHeader } from "./utils/userUtils";
 import { ToastContainer } from "react-toastify";
 
 function App() {
