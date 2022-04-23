@@ -1,6 +1,6 @@
-import "./loader.css"
+import "./loader.css";
 
-export function Loader() {
+export default function Loader() {
   return (
     <div className="lds-roller">
       <div></div>

@@ -5,7 +5,7 @@ import { AiFillLike } from "react-icons/ai";
 import { RiHistoryFill } from "react-icons/ri";
 import { useAuth } from "../../context/authContext";
 import { logout, userDashboard } from "../../utils/networkCall/userCalls";
-import { Loader } from "../loader/loader";
+import Loader from "../loader/loader";
 import { userType } from "../../utils/types";
 
 export function UserBox() {

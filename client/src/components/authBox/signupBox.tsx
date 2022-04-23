@@ -4,7 +4,7 @@ import icon64 from "../../icon/Utility-UI-64.png";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { signup } from "../../utils/networkCall/userCalls";
-import { Loader } from "../loader/loader";
+import Loader from "../loader/loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export function SignupBox() {

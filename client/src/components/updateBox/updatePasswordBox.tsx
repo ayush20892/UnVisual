@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { updateUserPassowrd } from "../../utils/networkCall/userCalls";
 import { useAuth } from "../../context/authContext";
-import { Loader } from "../loader/loader";
+import Loader from "../loader/loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export function UpdateUserPasswordBox() {

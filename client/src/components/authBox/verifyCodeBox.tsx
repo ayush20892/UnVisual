@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { verifyCode } from "../../utils/networkCall/userCalls";
 import { useAuth } from "../../context/authContext";
-import { Loader } from "../loader/loader";
+import Loader from "../loader/loader";
 
 export function VerifyCodeBox() {
   const [code, setCode] = useState("");

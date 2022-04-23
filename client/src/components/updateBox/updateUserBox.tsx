@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { updateUserData } from "../../utils/networkCall/userCalls";
 import { useAuth } from "../../context/authContext";
-import { Loader } from "../loader/loader";
+import Loader from "../loader/loader";
 
 export function UpdateUserBox({ type }: { type: string }) {
   const [value, setValue] = useState("");
