@@ -215,8 +215,6 @@ exports.userDashboard = BigPromise(async (req, res) => {
 
 exports.updatePassword = BigPromise(async (req, res) => {
   const user = await User.findById(req.user.id).select("+password");
-  // .populate("wishlist.product")
-  // .populate("cart.product");
 
   const isPasswordValidated = await user.isPasswordValidated(
     req.body.oldPassword
@@ -271,15 +269,6 @@ exports.updateUser = BigPromise(async (req, res) => {
 });
 
 // Liked Videos Controllers
-exports.getAllLikedVideos = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user._id).populate("likedVideos");
-
-  res.status(200).json({
-    success: true,
-    likedVideos: user.likedVideos,
-  });
-});
-
 exports.addToLikedVideos = BigPromise(async (req, res) => {
   const user = req.user;
 
@@ -328,15 +317,6 @@ exports.deleteFromLikedVideos = BigPromise(async (req, res) => {
 });
 
 // Watch Later Controllers
-exports.getAllWatchLater = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user._id).populate("watchLater");
-
-  res.status(200).json({
-    success: true,
-    watchLater: user.watchLater,
-  });
-});
-
 exports.addToWatchLater = BigPromise(async (req, res) => {
   const user = req.user;
 
@@ -373,15 +353,6 @@ exports.deleteFromWatchLater = BigPromise(async (req, res) => {
 });
 
 // History Controllers
-exports.getAllHistory = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user._id).populate("history");
-
-  res.status(200).json({
-    success: true,
-    history: user.history,
-  });
-});
-
 exports.addToHistory = BigPromise(async (req, res) => {
   const user = req.user;
 
@@ -427,15 +398,6 @@ exports.clearAllHistory = BigPromise(async (req, res) => {
 });
 
 // Playlist Controllers
-exports.getAllPlaylist = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user._id).populate("playlists");
-
-  res.status(200).json({
-    success: true,
-    playlist: user.playlists,
-  });
-});
-
 exports.createPlaylist = BigPromise(async (req, res) => {
   const user = req.user;
 
@@ -481,21 +443,6 @@ exports.deletePlaylist = BigPromise(async (req, res) => {
 });
 
 // Single Playlist Controllers
-exports.getAllSinglePlaylist = BigPromise(async (req, res) => {
-  const user = await User.findById(req.user._id).populate(
-    "playlists.playlistVideos"
-  );
-
-  const singlePlaylist = user.playlists.find(
-    (playlist) => playlist.playlistName === req.body.playlistName
-  );
-
-  res.status(200).json({
-    success: true,
-    singlePlaylist,
-  });
-});
-
 exports.addToSinglePlaylist = BigPromise(async (req, res) => {
   const user = req.user;
 

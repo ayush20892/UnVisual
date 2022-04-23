@@ -3,19 +3,6 @@ axios.defaults.withCredentials = true;
 
 const { REACT_APP_BACKEND_URL } = process.env;
 
-export const getAllSinglePlaylist = async () => {
-  try {
-    const {
-      data: { success, singlePlaylist },
-    } = await axios.get(`${REACT_APP_BACKEND_URL}/user/singlePlaylist`, {
-      withCredentials: true,
-    });
-    return { success, singlePlaylist };
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 export const addToSinglePlaylist = async (
   playlistId: string,
   videoId: string

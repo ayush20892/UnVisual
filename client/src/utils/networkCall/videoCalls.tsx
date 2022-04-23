@@ -14,34 +14,6 @@ export const getAllVideos = async () => {
   }
 };
 
-export const getOneVideo = async (videoId: string) => {
-  try {
-    const { data } = await axios.get(
-      `${REACT_APP_BACKEND_URL}/getOneVideo/${videoId}`
-    );
-    return { data };
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-export const getAllComments = async (videoId: string) => {
-  try {
-    const {
-      data: { success, comments },
-    } = await axios({
-      method: "get",
-      url: `${REACT_APP_BACKEND_URL}/video/comment`,
-      data: {
-        videoId: videoId,
-      },
-    });
-    return { success, comments };
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 export const addToComment = async (comment: string, videoId: string) => {
   try {
     const { data } = await axios({

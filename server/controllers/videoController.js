@@ -22,26 +22,6 @@ exports.getAllVideos = BigPromise(async (req, res) => {
   });
 });
 
-exports.getOneVideo = BigPromise(async (req, res) => {
-  const video = await Video.findById(req.params.id);
-
-  res.status(200).json({
-    success: true,
-    video,
-  });
-});
-
-exports.getAllComments = BigPromise(async (req, res) => {
-  const video = await Video.findById(req.body.videoId).populate(
-    "comments.user"
-  );
-
-  res.status(200).json({
-    success: true,
-    comments: video.comments,
-  });
-});
-
 exports.addComment = BigPromise(async (req, res) => {
   const user = req.user;
 
@@ -91,57 +71,5 @@ exports.adminAddVideo = BigPromise(async (req, res, next) => {
   res.status(201).json({
     success: true,
     video,
-  });
-});
-
-exports.updateProduct = BigPromise(async (req, res, next) => {
-  const product = await Video.findById(req.params.id);
-
-  let imageArray = [];
-
-  if (req.files) {
-    for (let index = 0; index < product.photos.length; index++) {
-      await cloudinary.uploader.destroy(product.photos[index].id);
-    }
-
-    for (let index = 0; index < req.files.photos.length; index++) {
-      const result = await cloudinary.uploader.upload(
-        req.files.photos[index].tempFilePath,
-        {
-          folder: "products",
-        }
-      );
-
-      imageArray.push({
-        id: result.public_id,
-        secure_url: result.secure_url,
-      });
-    }
-    req.body.photos = imageArray;
-  }
-
-  const updatedProduct = extend(product, req.body);
-
-  await product.save();
-
-  res.status(200).json({
-    success: true,
-    updatedProduct,
-  });
-});
-
-exports.deleteProduct = BigPromise(async (req, res, next) => {
-  const product = await Video.findById(req.params.id);
-
-  for (let index = 0; index < product.photos.length; index++) {
-    await cloudinary.uploader.destroy(product.photos[index].id);
-  }
-
-  await product.remove();
-
-  res.status(200).json({
-    success: true,
-    product,
-    message: "Video Deleted succesfully",
   });
 });

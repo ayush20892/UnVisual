@@ -11,20 +11,15 @@ const {
   userDashboard,
   updatePassword,
   updateUser,
-  getAllLikedVideos,
   addToLikedVideos,
   deleteFromLikedVideos,
-  getAllWatchLater,
   addToWatchLater,
   deleteFromWatchLater,
-  getAllHistory,
   addToHistory,
   deleteFromHistory,
   clearAllHistory,
-  getAllPlaylist,
   createPlaylist,
   deletePlaylist,
-  getAllSinglePlaylist,
   addToSinglePlaylist,
   deleteFromSinglePlaylist,
   adminUsers,
@@ -57,21 +52,18 @@ router.route("/user/update").post(isLoggedIn, updateUser);
 // Liked Videos Routes
 router
   .route("/user/likedVideos")
-  .get(isLoggedIn, getAllLikedVideos)
   .post(isLoggedIn, addToLikedVideos)
   .delete(isLoggedIn, deleteFromLikedVideos);
 
 // Watch Later Routes
 router
   .route("/user/watchLater")
-  .get(isLoggedIn, getAllWatchLater)
   .post(isLoggedIn, addToWatchLater)
   .delete(isLoggedIn, deleteFromWatchLater);
 
 // History Routes
 router
   .route("/user/history")
-  .get(isLoggedIn, getAllHistory)
   .post(isLoggedIn, addToHistory)
   .delete(isLoggedIn, deleteFromHistory);
 router.route("/user/clearHistory").delete(isLoggedIn, clearAllHistory);
@@ -79,14 +71,12 @@ router.route("/user/clearHistory").delete(isLoggedIn, clearAllHistory);
 // Playlist Routes
 router
   .route("/user/playlist")
-  .get(isLoggedIn, getAllPlaylist)
   .post(isLoggedIn, createPlaylist)
   .delete(isLoggedIn, deletePlaylist);
 
 // Single Playlist Routes
 router
   .route("/user/singlePlaylist")
-  .get(isLoggedIn, getAllSinglePlaylist)
   .post(isLoggedIn, addToSinglePlaylist)
   .delete(isLoggedIn, deleteFromSinglePlaylist);
 
