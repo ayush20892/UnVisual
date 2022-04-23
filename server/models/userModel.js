@@ -30,29 +30,23 @@ const userSchema = mongoose.Schema({
   forgotPasswordExpiry: Date,
   likedVideos: [
     {
-      // video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video",
-        required: true,
-      // },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Video",
+      required: true,
     },
   ],
   watchLater: [
     {
-      // video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video",
-        required: true,
-      // },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Video",
+      required: true,
     },
   ],
   history: [
     {
-      // video: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Video",
-        required: true,
-      // },
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Video",
+      required: true,
     },
   ],
   playlists: [
@@ -63,11 +57,9 @@ const userSchema = mongoose.Schema({
       },
       playlistVideos: [
         {
-          // video: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Video",
-            required: true,
-          // },
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Video",
+          required: true,
         },
       ],
     },
