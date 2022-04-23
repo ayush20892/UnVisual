@@ -1,5 +1,14 @@
 import { VideoActionType, VideoInitialStateType } from "../utils/types";
 
+export const videoInitialState: VideoInitialStateType = {
+  videos: [],
+  showAddToPlaylistModal: false,
+  videoToBeAddedToPlaylist: "",
+  showCreatePlaylistInput: false,
+  searchInput: "",
+  category: "All",
+};
+
 export function videoReducer(
   state: VideoInitialStateType,
   action: VideoActionType
@@ -73,12 +82,3 @@ export function videoReducer(
       return state;
   }
 }
-
-export const videoInitialState: VideoInitialStateType = {
-  videos: [],
-  showAddToPlaylistModal: false,
-  videoToBeAddedToPlaylist: "",
-  showCreatePlaylistInput: false,
-  searchInput: "",
-  category: "All",
-};

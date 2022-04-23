@@ -1,5 +1,14 @@
 import { ActionType, AuthInitialStateType } from "../utils/types";
 
+export const authInitialState: AuthInitialStateType = {
+  userId: "",
+  userName: "",
+  playlists: [],
+  likedVideos: [],
+  watchLater: [],
+  history: [],
+};
+
 export function authReducer(
   state: AuthInitialStateType,
   action: ActionType
@@ -126,12 +135,3 @@ export function authReducer(
       return state;
   }
 }
-
-export const authInitialState: AuthInitialStateType = {
-  userId: "",
-  userName: "",
-  playlists: [],
-  likedVideos: [],
-  watchLater: [],
-  history: [],
-};
