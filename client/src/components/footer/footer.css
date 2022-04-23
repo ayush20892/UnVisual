@@ -5,7 +5,7 @@ footer {
 @media screen and (max-width: 768px) {
   footer {
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: var(--bg-solid);
     display: flex;
     justify-content: space-around;
@@ -22,7 +22,7 @@ footer {
   }
 
   footer > .footer-pill > .footer-icon {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   footer > .footer-pill > .footer-icon-name {
