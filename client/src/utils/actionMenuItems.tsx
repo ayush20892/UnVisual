@@ -124,12 +124,12 @@ export const ActionMenuItems = (pathName: string) => {
 
   const value = pathName.substring(10);
   const playlist = authState.playlists.find(
-    (playlist) => playlist.playlistName === value
+    (playlist) => playlist._id === value
   );
   const singlePlaylistRemove = {
     icon: RiPlayListAddLine,
     name: "singlePlaylist",
-    action: `Delete from ${value}`,
+    action: `Delete from ${playlist?.playlistName}`,
     actionFunction: (videoId: string) =>
       deleteFromSinglePlaylistHandler({
         playlistId: playlist?._id,

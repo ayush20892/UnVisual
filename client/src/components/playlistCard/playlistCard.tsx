@@ -11,7 +11,7 @@ function PlaylistCard({ playlist }: { playlist: playlistType }) {
   return (
     <>
       <div
-        onClick={() => navigate(`/playlist/${playlist.playlistName}`)}
+        onClick={() => navigate(`/playlist/${playlist._id}`)}
         className="img-box"
       >
         <img
@@ -30,7 +30,7 @@ function PlaylistCard({ playlist }: { playlist: playlistType }) {
       <div className="playlist-details">
         <div className="playlist-info">
           <h4>{playlist.playlistName}</h4>
-          <p onClick={() => navigate(`/playlist/${playlist.playlistName}`)}>
+          <p onClick={() => navigate(`/playlist/${playlist._id}`)}>
             VIEW FULL PLAYLIST
           </p>
         </div>

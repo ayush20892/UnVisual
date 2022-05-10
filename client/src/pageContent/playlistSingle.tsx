@@ -4,16 +4,17 @@ import HorizontalVideoDisplay from "../components/horizontalVideoDisplay/horizon
 import { useAuth } from "../context/authContext";
 
 function PlaylistSingle() {
-  const { playlistName } = useParams();
+  const { playlistId } = useParams();
   const { authState } = useAuth();
-  const playlistVideos = authState.playlists.find(
-    (playlist) => playlist.playlistName === playlistName
-  )?.playlistVideos;
+  const playlist = authState.playlists.find(
+    (playlist) => playlist._id === playlistId
+  );
+
   return (
     <div>
       <HorizontalVideoDisplay
-        videos={playlistVideos!}
-        pageType={playlistName!}
+        videos={playlist?.playlistVideos!}
+        pageType={playlist?.playlistName!}
       />
     </div>
   );

@@ -80,7 +80,7 @@ function App() {
             />
 
             <Route
-              path="/playlist/:playlistName"
+              path="/playlist/:playlistId"
               element={
                 <PrivateRoute>
                   <PlaylistSingle />
