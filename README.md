@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://unvisual.netlify.app/" rel="noopener" target="_blank"><img src="/src/icon/Utility-UI-128.png" width="120" height="120" align="center"/></a>
+  <a href="https://unvisual.netlify.app/" rel="noopener" target="_blank"><img src="/client/src/icon/Utility-UI-128.png" width="120" height="120" align="center"/></a>
 
 </p>
 
