@@ -19,7 +19,7 @@
 <br />
 
 ## Overview:
-<p>✨ UnVisual is a Video Liblary app for streaming across various categories ✨</p>
+<p>✨ UnVisual is a Video Library app for streaming across various categories ✨</p>
 
 ## Preview (Responsive) :
 ![](/client/src/icon/UnVisual.gif)
