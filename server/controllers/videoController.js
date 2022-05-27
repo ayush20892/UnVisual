@@ -62,6 +62,20 @@ exports.deleteComment = BigPromise(async (req, res) => {
   });
 });
 
+exports.increaseViewCount = BigPromise(async (req, res) => {
+  const { videoId } = req.body;
+  const video = await Video.findOne({ videoId });
+
+  video.likes = video.likes + 1;
+
+  await video.save();
+
+  res.status(200).json({
+    success: true,
+    video,
+  });
+});
+
 // Admin Controllers
 exports.adminAddVideo = BigPromise(async (req, res, next) => {
   req.body.user = req.user;

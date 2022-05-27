@@ -356,14 +356,18 @@ exports.deleteFromWatchLater = BigPromise(async (req, res) => {
 exports.addToHistory = BigPromise(async (req, res) => {
   const user = req.user;
 
-  if (user.history.find((video) => video._id.toString() === req.body.videoId))
-    return res.json({
-      success: false,
-    });
+  let updatedVideos = [...user.history];
 
-  user.history.push(req.body.videoId);
+  if (user.history.find((video) => video._id.toString() === req.body.videoId)) {
+    updatedVideos = [];
+    updatedVideos = user.history.filter(
+      (video) => video._id.toString() !== req.body.videoId
+    );
+  }
 
-  await user.save();
+  updatedVideos.push(req.body.videoId);
+
+  await user.updateOne({ history: updatedVideos });
 
   res.status(200).json({
     success: true,

@@ -5,11 +5,13 @@ const {
   getAllVideos,
   addComment,
   deleteComment,
+  increaseViewCount,
 } = require("../controllers/videoController");
 const { isLoggedIn } = require("../middlewares/user");
 
 // Video Routes.
 router.route("/getAllVideos").get(getAllVideos);
+router.route("/increaseLike").post(increaseViewCount);
 
 router
   .route("/video/comment")
@@ -17,6 +19,6 @@ router
   .delete(isLoggedIn, deleteComment);
 
 // Admin Routes
-router.route("/admin/addProduct").post(isLoggedIn, adminAddVideo);
+router.route("/admin/addProduct").post(adminAddVideo);
 
 module.exports = router;
