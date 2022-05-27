@@ -19,7 +19,7 @@
 <br />
 
 ## Overview:
-<p>✨ UnVisual is a Video Liblary app for streaming across various categories ✨</p>
+<p>✨ UnVisual is a Video Library app for streaming across various categories ✨</p>
 
 ## Preview (Responsive) :
 ![](/client/src/icon/UnVisual.gif)
@@ -28,7 +28,7 @@
 
 - **Frontend:** HTML, CSS, React, TypeScript
 - **Backend:** Node, Express, Mongoose ODM
-- **Dtabase:** MongoDB
+- **Database:** MongoDB
 - **Authentication:** JWT, bcryptjs, cookies
 - **Version Control:** Git and GitHub
 - **Hosting:** Netlify
@@ -73,6 +73,13 @@ $ npm install
 ```
 $ npm start
 ```
+
+<br/>
+
+
+## Note
+- Add .env file with suitable variables.
+<br/>
 
 ## Connect
 - **Twiiter** [ayush20892](https://twitter.com/ayush20892)
