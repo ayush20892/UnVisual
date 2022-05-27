@@ -33,9 +33,13 @@ export function LoginBox() {
     setNetworkLoader(true);
     const data = await login("ayush20892@gmail.com", "123456");
     setNetworkLoader(false);
-    // if (data.success)
-    authDispatch({ type: "CREATE_SESSION", payload: data!.user });
-    navigate(previousPath, { replace: true });
+    if (data!.success) {
+      authDispatch({ type: "CREATE_SESSION", payload: data!.user });
+      navigate(previousPath, { replace: true });
+    }
+    setError(data!.message);
+    setEmail("");
+    setPassword("");
   }
 
   return (
