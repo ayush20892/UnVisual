@@ -81,7 +81,19 @@ export function authReducer(
       };
 
     case "ADD_TO_HISTORY":
-      return { ...state, history: [...state.history, action.payload] };
+      let updatedVideos = [...state.history];
+      if (
+        state.history.find(
+          (video) => video._id.toString() === action.payload._id
+        )
+      ) {
+        updatedVideos = [];
+        updatedVideos = state.history.filter(
+          (video) => video._id.toString() !== action.payload._id
+        );
+      }
+      updatedVideos.push(action.payload);
+      return { ...state, history: updatedVideos };
 
     case "REMOVE_FROM_HISTORY":
       return {

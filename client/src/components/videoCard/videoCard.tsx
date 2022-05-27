@@ -49,7 +49,7 @@ function VideoCard({ video }: { video: videoType }) {
         <div className="video-details">
           <h3>{video.title}</h3>
           <p>
-            {video.creator} &#9734; {video.views}
+            {video.creator} &#9734; {video.views} Views
           </p>
         </div>
         <div className="video-icons">

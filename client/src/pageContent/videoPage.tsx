@@ -3,12 +3,13 @@ import { useParams, useNavigate } from "react-router";
 import VideoCard from "../components/videoCard/videoCard";
 import { useAuth } from "../context/authContext";
 import { useVideo } from "../context/videoContext";
+import { increaseViewCount } from "../utils/networkCall/videoCalls";
 import { videoType } from "../utils/types";
 import { addToHistoryHandler } from "../utils/videoCalls";
 
 function VideoPage() {
   const { videoId } = useParams();
-  const { videoState } = useVideo();
+  const { videoState, videoDispatch } = useVideo();
   const { authState, authDispatch, setNetworkLoader } = useAuth();
   const navigate = useNavigate();
 
@@ -16,18 +17,17 @@ function VideoPage() {
     (item: videoType) => item.videoId === videoId
   )!;
 
-  function addVideoToHistory() {
-    const videoPresentInHistory: boolean | undefined =
-      authState.history.find((vid) => vid.videoId === videoId) !== undefined;
-    if (!videoPresentInHistory)
-      addToHistoryHandler({
-        videoId: video!._id,
-        authState,
-        authDispatch,
-        navigate,
-        videoState,
-        setNetworkLoader,
-      });
+  async function addVideoToHistory() {
+    addToHistoryHandler({
+      videoId: video!._id,
+      authState,
+      authDispatch,
+      navigate,
+      videoState,
+      setNetworkLoader,
+    });
+    videoDispatch({ type: "VIEW_INCREASE", payload: videoId! });
+    await increaseViewCount(videoId!);
   }
 
   useEffect(() => {

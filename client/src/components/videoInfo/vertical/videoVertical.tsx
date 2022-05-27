@@ -22,7 +22,7 @@ function VideoVertical({ video }: { video: videoType }) {
             {video.title}
           </h4>
           <p>
-            {video.creator} &#9734; {video.views}
+            {video.creator} &#9734; {video.views} Views
           </p>
         </div>
         <ActionMenuDropdown item={video._id} />

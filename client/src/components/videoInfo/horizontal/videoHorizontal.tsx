@@ -19,7 +19,7 @@ function VideoHorizontal({ video }: { video: videoType }) {
       <div className="video-details">
         <h4 onClick={() => navigate(`/video/${video.videoId}`)}>{video.title}</h4>
         <p>
-          {video.creator} &#9734; {video.views}
+          {video.creator} &#9734; {video.views} Views
         </p>
       </div>
       <ActionMenuDropdown item={video._id} />

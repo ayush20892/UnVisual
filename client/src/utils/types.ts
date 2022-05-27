@@ -104,7 +104,8 @@ export type VideoActionType =
   | { type: "HIDE_CREATE_PLAYLIST" }
   | { type: "SEARCH_INPUT"; payload: string }
   | { type: "CHANGE_CATEGORY"; payload: string }
-  | { type: "LIKE"; payload: { videoId: string; type: string } };
+  | { type: "LIKE"; payload: { videoId: string; type: string } }
+  | { type: "VIEW_INCREASE"; payload: string };
 
 export type VideoContextType = {
   videoState: VideoInitialStateType;

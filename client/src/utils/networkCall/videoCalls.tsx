@@ -45,3 +45,18 @@ export const deleteFromComment = async (commentId: string, videoId: string) => {
     console.log(err);
   }
 };
+
+export const increaseViewCount = async (videoId: string) => {
+  try {
+    const { data } = await axios({
+      method: "post",
+      url: `${REACT_APP_BACKEND_URL}/increaseLike`,
+      data: {
+        videoId: videoId,
+      },
+    });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};

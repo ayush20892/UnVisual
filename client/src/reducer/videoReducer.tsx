@@ -78,6 +78,15 @@ export function videoReducer(
       });
       return { ...state, videos: newVideos };
 
+    case "VIEW_INCREASE":
+      const viewIncreaseVideos = state.videos.map((vid) => {
+        if (vid.videoId === action.payload) {
+          vid.views = vid.views + 1;
+        }
+        return vid;
+      });
+      return { ...state, videos: viewIncreaseVideos };
+
     default:
       return state;
   }
