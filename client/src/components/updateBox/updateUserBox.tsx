@@ -9,11 +9,12 @@ export function UpdateUserBox({ type }: { type: string }) {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { networkLoader, setNetworkLoader } = useAuth();
+  const { authDispatch, networkLoader, setNetworkLoader } = useAuth();
 
   async function userUpdateHandler() {
     setNetworkLoader(true);
     if (type === "name") {
+      authDispatch({ type: "UPDATE_NAME", payload: value });
       const data = await updateUserData({ name: value });
       setNetworkLoader(false);
       if (data.success) navigate("/user", { replace: true });

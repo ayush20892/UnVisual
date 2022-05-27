@@ -54,6 +54,9 @@ export function authReducer(
         history: [],
       };
     }
+    case "UPDATE_NAME": {
+      return { ...state, userName: action.payload };
+    }
 
     case "ADD_TO_WATCH_LATER":
       return { ...state, watchLater: [...state.watchLater, action.payload] };

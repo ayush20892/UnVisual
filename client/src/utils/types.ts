@@ -63,7 +63,8 @@ export type ActionType =
   | { type: "CREATE_PLAYLIST"; payload: playlistType }
   | { type: "REMOVE_PLAYLIST"; payload: playlistType }
   | { type: "ADD_TO_PLAYLIST"; payload: addRemovePlaylistType }
-  | { type: "REMOVE_FROM_PLAYLIST"; payload: addRemovePlaylistType };
+  | { type: "REMOVE_FROM_PLAYLIST"; payload: addRemovePlaylistType }
+  | { type: "UPDATE_NAME"; payload: string };
 
 export type AuthContextType = {
   authState: AuthInitialStateType;
