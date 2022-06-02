@@ -6,10 +6,13 @@ import { useAuth } from "../../context/authContext";
 import Loader from "../loader/loader";
 
 export function UpdateUserBox({ type }: { type: string }) {
-  const [value, setValue] = useState("");
+  const { authState, authDispatch, networkLoader, setNetworkLoader } =
+    useAuth();
+  const [value, setValue] = useState(
+    type === "name" ? authState.userName : authState.email
+  );
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { authDispatch, networkLoader, setNetworkLoader } = useAuth();
 
   async function userUpdateHandler() {
     setNetworkLoader(true);
@@ -18,10 +21,13 @@ export function UpdateUserBox({ type }: { type: string }) {
       const data = await updateUserData({ name: value });
       setNetworkLoader(false);
       if (data.success) navigate("/user", { replace: true });
+      setError(data.message);
+      setValue("");
     } else if (type === "email") {
+      authDispatch({ type: "UPDATE_EMAIL", payload: value });
       const data = await updateUserData({ email: value });
-      if (data.success) navigate("/user", { replace: true });
       setNetworkLoader(false);
+      if (data.success) navigate("/user", { replace: true });
       setError(data.message);
       setValue("");
     }

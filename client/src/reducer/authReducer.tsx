@@ -3,6 +3,7 @@ import { ActionType, AuthInitialStateType } from "../utils/types";
 export const authInitialState: AuthInitialStateType = {
   userId: "",
   userName: "",
+  email: "",
   playlists: [],
   likedVideos: [],
   watchLater: [],
@@ -23,6 +24,7 @@ export function authReducer(
         ...state,
         userId: action.payload._id,
         userName: action.payload.name,
+        email: action.payload.email,
         playlists: action.payload.playlists,
         likedVideos: action.payload.likedVideos,
         watchLater: action.payload.watchLater,
@@ -35,6 +37,7 @@ export function authReducer(
         ...state,
         userId: action.payload._id,
         userName: action.payload.name,
+        email: action.payload.email,
         playlists: action.payload.playlists,
         likedVideos: action.payload.likedVideos,
         watchLater: action.payload.watchLater,
@@ -48,6 +51,7 @@ export function authReducer(
         ...state,
         userId: "",
         userName: "",
+        email: "",
         playlists: [],
         likedVideos: [],
         watchLater: [],
@@ -56,6 +60,10 @@ export function authReducer(
     }
     case "UPDATE_NAME": {
       return { ...state, userName: action.payload };
+    }
+
+    case "UPDATE_EMAIL": {
+      return { ...state, email: action.payload };
     }
 
     case "ADD_TO_WATCH_LATER":

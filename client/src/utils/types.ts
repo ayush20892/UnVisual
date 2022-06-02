@@ -39,6 +39,7 @@ export type userType = {
 export type AuthInitialStateType = {
   userId: string | null;
   userName: string;
+  email: string;
   playlists: playlistType[];
   likedVideos: videoType[];
   watchLater: videoType[];
@@ -64,7 +65,8 @@ export type ActionType =
   | { type: "REMOVE_PLAYLIST"; payload: playlistType }
   | { type: "ADD_TO_PLAYLIST"; payload: addRemovePlaylistType }
   | { type: "REMOVE_FROM_PLAYLIST"; payload: addRemovePlaylistType }
-  | { type: "UPDATE_NAME"; payload: string };
+  | { type: "UPDATE_NAME"; payload: string }
+  | { type: "UPDATE_EMAIL"; payload: string };
 
 export type AuthContextType = {
   authState: AuthInitialStateType;

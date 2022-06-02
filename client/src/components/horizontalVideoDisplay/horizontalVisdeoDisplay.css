@@ -2,18 +2,33 @@
   padding: 10px 20px;
 }
 
-.horizontal-display > .page-info {
+.horizontal-display > .page-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.horizontal-display > .page-detail > button {
+  background-color: var(--bg-solid-light);
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+}
+
+.horizontal-display > .page-detail > .page-info {
   display: flex;
   justify-content: flex-start;
   padding: 10px;
 }
 
-.horizontal-display > .page-info > h4 {
+.horizontal-display > .page-detail > .page-info > h4 {
   font-size: 20px;
   padding-right: 10px;
 }
 
-.horizontal-display > .page-info > p {
+.horizontal-display > .page-detail > .page-info > p {
   font-size: 20px;
   padding-left: 10px;
   color: var(--text-secondary);
